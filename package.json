@@ -1,0 +1,30 @@
+{
+  "name": "youtube",
+  "version": "1.0.0",
+  "description": "The Best way to watch videos",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dayekimm0/youtube-reloaded.git"
+  },
+  "author": "daye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dayekimm0/youtube-reloaded/issues"
+  },
+  "homepage": "https://github.com/dayekimm0/youtube-reloaded#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.27.2",
+    "@babel/core": "^7.27.4",
+    "@babel/node": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "nodemon": "^3.1.10"
+  }
+}
