@@ -18,6 +18,7 @@
   "homepage": "https://github.com/dayekimm0/youtube-reloaded#readme",
   "dependencies": {
     "express": "^5.1.0",
+    "mongoose": "^8.15.1",
     "morgan": "^1.10.0",
     "pug": "^3.0.3"
   },
