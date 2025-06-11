@@ -21,8 +21,10 @@ const videoSchema = new mongoose.Schema({
   },
 });
 
-videoSchema.pre("save", async function () {
-  console.log("We are about to:", this);
+videoSchema.static("formatHashtags", function (hashtags) {
+  return hashtags
+    .split(",")
+    .map((word) => (word.startsWith("#") ? word : `#${word}`));
 });
 
 const Video = mongoose.model("Video", videoSchema);
