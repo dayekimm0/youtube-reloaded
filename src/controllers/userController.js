@@ -9,7 +9,7 @@ export const postJoin = async (req, res) => {
   const { email, id, password, password2, name, location } = req.body;
   const pageTitle = "Join";
   if (password !== password2) {
-    return res.status(404).render("join", {
+    return res.status(400).render("join", {
       pageTitle,
       errorMessage: "Password confirmation does not match",
     });
@@ -68,7 +68,9 @@ export const postLogin = async (req, res) => {
       errorMessage: "Wrong Password",
     });
   }
-  return res.end();
+  req.session.loggedIn = true;
+  req.session.user = user;
+  return res.redirect("/");
 };
 
 export const logout = (req, res) => {
@@ -77,4 +79,16 @@ export const logout = (req, res) => {
 
 export const see = (req, res) => {
   return res.send("See User");
+};
+
+export const startGithubLogin = (req, res) => {
+  const baseURL = "https://github.com/login/oauth/authorize";
+  const config = {
+    clientId: "Ov23liN5HIFMuXuuplBW",
+    allow_signup: false,
+    scope: "read:user user:email",
+  };
+  const params = new URLSearchParams(config).toString();
+  const finalURL = `${baseURL}?${params}`;
+  return res.redirect(finalURL);
 };

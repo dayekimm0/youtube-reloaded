@@ -5,13 +5,13 @@ block content
     span=errorMessage
   form(method="POST")
     input(name="email" type="email" placeholder="Email" required unique)
-    input(name="id" type="text" placeholder="ID" required)
+    input(name="id" type="text" placeholder="ID" required unique)
     input(name="password" type="password" placeholder="Password" required)
     input(name="password2" type="password" placeholder="Confirm Password" required)
     input(name="name" type="text" placeholder="Name" required)
     input(name="location" type="text" placeholder="Loaction")
     input(type="submit" value="Join")
-    hr
-    div 
-      span Already Have an account?
-      a(href="/login") Login Now &rarr; 
+  hr
+  div 
+    span Already Have an account?
+    a(href="/login") Login Now &rarr; 
