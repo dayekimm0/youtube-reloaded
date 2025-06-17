@@ -25,6 +25,7 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   location: String,
+  videos: [{ type: mongoose.Schema.Types.ObjectId, ref: "Video" }],
 });
 
 userSchema.pre("save", async function () {
@@ -32,5 +33,4 @@ userSchema.pre("save", async function () {
 });
 
 const User = mongoose.model("User", userSchema);
-
 export default User;
